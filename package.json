@@ -1,33 +1,35 @@
 {
-    "name": "metly",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "watch": "gulp watch",
-        "build": "gulp build",
-        "webserver": "gulp webserver",
-        "version": "jq .version package.json"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/TakesxiSximada/metly.git"
-    },
-    "author": "TakesxiSximada",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/TakesxiSximada/metly/issues"
-    },
-    "homepage": "https://github.com/TakesxiSximada/metly#readme",
-    "devDependencies": {
-        "gulp": "^3.9.1",
-        "gulp-jade": "^1.1.0",
-        "gulp-watch": "^4.3.9",
-        "gulp-webserver": "^0.9.1",
-        "jade": "^1.11.0",
-        "jade-html-loader": "0.0.3",
-        "stylus": "^0.54.5",
-        "webpack": "^1.13.2"
-    }
+  "name": "metly",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "gulp watch",
+    "build": "gulp build",
+    "webserver": "gulp webserver",
+    "version": "jq .version package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TakesxiSximada/metly.git"
+  },
+  "author": "TakesxiSximada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TakesxiSximada/metly/issues"
+  },
+  "homepage": "https://github.com/TakesxiSximada/metly#readme",
+  "devDependencies": {
+    "browser-sync": "^2.15.0",
+    "gulp": "^3.9.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-stylus": "^2.5.0",
+    "gulp-watch": "^4.3.9",
+    "gulp-webserver": "^0.9.1",
+    "jade": "^1.11.0",
+    "jade-html-loader": "0.0.3",
+    "stylus": "^0.54.5",
+    "webpack": "^1.13.2"
+  }
 }
