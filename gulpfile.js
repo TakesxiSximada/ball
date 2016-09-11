@@ -1,4 +1,5 @@
 const path = require('path');
+const child_process = require('child_process');
 const gulp = require('gulp');
 const jade = require('gulp-jade');
 const watch = require('gulp-watch');
@@ -10,8 +11,8 @@ const outputDir = path.join(__dirname, 'build');
 
 gulp.task('stylus', () => {
     return gulp.src([
-        './src/css/**/*.styl',
-        '!./src/css/**/_*.styl',
+        './src/**/*.styl',
+        '!./src/**/_*.styl',
     ]).pipe(
         stylus()
     ).pipe(
@@ -22,8 +23,8 @@ gulp.task('stylus', () => {
 
 gulp.task('jade', () => {
     return gulp.src([
-        './src/html/**/*.jade',
-        '!./src/html/**/_*.jade',
+        './src/**/*.jade',
+        '!./src/**/_*.jade',
     ]).pipe(
         jade({
             pretty: true,
@@ -34,24 +35,23 @@ gulp.task('jade', () => {
 });
 
 
+gulp.task('webpack', () => {
+    var child = child_process.exec('node_modules/.bin/webpack -w');
+});
+
+
 gulp.task('watch', () => {
+    gulp.start('webpack');
     watch([
-        './src/html/**/*.jade',
-        './src/html/**/*.styl',
+        './src/**/*.jade',
+        './src/**/*.styl',
+        './src/**/*.js',
+        './src/**/*.msx',
     ], () => {
         gulp.start('jade');
         gulp.start('stylus');
     });
 });
-
-
-// gulp.task('browser-sync', () => {
-//     browserSync.init({
-//         server: {
-//             baseDir: outputDir,
-//         }
-//     });
-// });
 
 
 gulp.task('reload', () => {
@@ -68,4 +68,8 @@ gulp.task('server', () => {
 });
 
 
-gulp.task('default', ['watch', 'reload', 'server']);
+gulp.task('default', [
+    'watch',
+    'reload',
+    'server',
+]);

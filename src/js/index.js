@@ -4,4 +4,4 @@ class Menu {
     }
 }
 
-console.log('OK');
+console.log('AAAAAAA');
