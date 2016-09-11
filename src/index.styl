@@ -1,0 +1,35 @@
+body
+  font-family "Open sans", Arial,  sans-serif
+  font-weight 400
+  font-size 16px
+  line-height 1.7
+  color #5f5f5f
+  background #eee
+  height 100%
+  position relative
+
+.MenuButton
+  content "x"
+  position fixed
+  top 2rem
+  right 3rem
+  z-index 1001
+
+.Menu
+  position fixed
+  top 0
+  right 0
+  width 0
+  height 100%
+  max-width 284px
+  background-color #000
+  z-index 1000
+
+  ul
+    li
+      list-style none
+
+.Menu.visible
+  width 6rem
+  padding-top 4rem
+  padding-right 3rem
