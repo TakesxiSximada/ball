@@ -4,6 +4,7 @@ const gulp = require('gulp');
 const jade = require('gulp-jade');
 const watch = require('gulp-watch');
 const stylus = require('gulp-stylus');
+const plumber = require('gulp-plumber');
 const browserSync = require('browser-sync').create();
 
 const outputDir = path.join(__dirname, 'build');
@@ -14,6 +15,8 @@ gulp.task('stylus', () => {
         './src/**/*.styl',
         '!./src/**/_*.styl',
     ]).pipe(
+        plumber()
+    ).pipe(
         stylus()
     ).pipe(
         gulp.dest(outputDir)
@@ -26,6 +29,8 @@ gulp.task('jade', () => {
         './src/**/*.jade',
         '!./src/**/_*.jade',
     ]).pipe(
+        plumber()
+    ).pipe(
         jade({
             pretty: true,
         })
