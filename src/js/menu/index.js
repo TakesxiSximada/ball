@@ -33,7 +33,3 @@ export class HeaderMenu {
         }, false, false);
     }
 }
-
-// export default function test(){
-//     console.log('OK');
-// }
