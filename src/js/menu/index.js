@@ -7,6 +7,7 @@ export class HeaderMenu {
     }
 
     toggle(event) {
+        this.button.classList.toggle(this.visible);
         this.menu.classList.toggle(this.visible);
     }
 
