@@ -26,11 +26,37 @@ body
   @media screen and (min-width: 768px)
     display none
 
+
+.GetStarted
+  border solid
+  border-width 2px
+  border-radius 15px
+  padding 5px
+
+  &:hover
+    color white
+    background-color blue
+    border-color blue
+
+
 .MenuButton.visible
   color white
 
+.Header
+  height 80px
+
+.Header__Banner
+  @media screen and (min-width: 768px)
+    display inline-block
+    float left
+
+    &:after
+      content ""
+      display table
+
 .Menu
   z-index 1000
+  width 100%
 
   a
     text-decoration none
@@ -54,15 +80,20 @@ body
 
   @media screen and (min-width: 768px)
     ul
-      li
-        background-color gray
-        float left
-        width 6rem
-        text-align center
+      display block
 
       &:after
         content ""
         display table
+
+
+      li
+        float right
+        width 7rem
+        text-align center
+        margin-top 1.5rem
+        padding 0.5rem
+        font-weight 600
 
   ul
     li
