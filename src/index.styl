@@ -45,6 +45,7 @@ body
 .Header
   height 80px
 
+
 .Header__Banner
   @media screen and (min-width: 768px)
     display inline-block
@@ -82,7 +83,7 @@ body
     ul
       display block
 
-      &:after
+      &::after
         content ""
         display table
 
@@ -94,6 +95,17 @@ body
         margin-top 1.5rem
         padding 0.5rem
         font-weight 600
+
+        // hover underline
+        &::after
+          content ""
+          display block
+          width 0
+          transition width 0.3s
+          border-bottom 2px solid #fff
+
+        &:hover::after
+          width 100%
 
   ul
     li
