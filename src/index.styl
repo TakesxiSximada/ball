@@ -1,3 +1,6 @@
+.NoDisplay
+  display none
+
 body
   font-family "Open sans", Arial,  sans-serif
   font-weight 400
@@ -7,8 +10,10 @@ body
   background #eee
   height 100%
   position relative
+  margin 0
+  padding 0
 
-.MenuButton:before
+.MenuButton::before
   font-family MenuBotton
   content "\e801"
   position fixed
@@ -126,11 +131,20 @@ body
       content ""
       display table
 
+footer
+  background-color #333333
+
+.Icon
+  display inline-block
+  width 30px
+  height 30px
 
 .Footer__CopyRight
-  margin auto
+  margin-left 2rem
+  margin-right 2rem
+  padding-top 1rem
   text-align center
-
+  border-top solid 1px #7f7f7f
 
 @font-face
   font-family 'MenuBotton'
