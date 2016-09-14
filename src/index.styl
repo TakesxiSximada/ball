@@ -48,7 +48,7 @@ body
   color white
 
 .Header
-  height 80px
+  height 150px
 
 
 .Header__Banner
@@ -61,8 +61,7 @@ body
       display table
 
   img
-    height 80px
-
+    height 60px
 
 .Menu
   z-index 1000
@@ -91,19 +90,28 @@ body
   @media screen and (min-width: 768px)
     ul
       display block
+      float center
 
       &::after
         content ""
         display table
 
-
       li
-        float right
-        width 7rem
+        float left
+        width 4.5rem
         text-align center
         margin-top 1.5rem
         padding 0.5rem
+
+        font-family 'ProximaNova', 'Helvetica Neue', Helvetica, Arial, sans-serif
         font-weight 600
+        font-size 0.9rem
+        text-transform capitalize
+        text-align center
+
+        a
+          color #30282A
+          text-align center
 
         // hover underline
         &::after
@@ -119,6 +127,23 @@ body
   ul
     li
       list-style none
+
+.AccountMenu
+  @extend .Menu
+
+  @media screen and (min-width: 768px)
+    position fixed
+    top 0
+    right 0
+
+    ul
+      float right
+
+      &::after
+        content ""
+        display table
+
+
 
 .Footer__Social
   text-align center
