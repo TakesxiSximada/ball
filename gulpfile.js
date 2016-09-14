@@ -5,9 +5,25 @@ const jade = require('gulp-jade');
 const watch = require('gulp-watch');
 const stylus = require('gulp-stylus');
 const plumber = require('gulp-plumber');
+const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
 
 const outputDir = path.join(__dirname, 'build');
+
+const image_pattern = [
+    './src/**/*.png',
+    '!./src/**/_*.png',
+]
+
+gulp.task('image', () => {
+    return gulp.src(
+        image_pattern
+    ).pipe(
+        imagemin()
+    ).pipe(
+        gulp.dest(outputDir)
+    );
+});
 
 
 gulp.task('stylus', () => {
@@ -55,6 +71,10 @@ gulp.task('watch', () => {
     ], () => {
         gulp.start('jade');
         gulp.start('stylus');
+    });
+
+    watch(image_pattern, () => {
+        gulp.start('image');
     });
 });
 

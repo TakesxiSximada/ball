@@ -1,3 +1,15 @@
+mixin icon(name)
+  case name
+    when 'twitter'
+      span.Icon: include fonts/social/twitter.svg
+    when 'facebook'
+      span.Icon: include fonts/social/facebook.svg
+    when 'instagram'
+      span.Icon: include fonts/social/instagram.svg
+    when 'googleplus'
+      span.Icon: include fonts/social/googleplus.svg
+
+
 doctype html
 html
   head
@@ -28,15 +40,16 @@ html
     div.MenuButton
 
     header.Header
-      h1.Header__Banner: a(href="#") xx
+      h1.Header__Banner: a(href="#"): img(src="/img/logo.png")
+
       nav.Menu
         ul
-          li: a.GetStarted(href="#") Get Started
           li: a(href="#") Products
           li: a(href="#") Services
           li: a(href="#") Pricing
           li: a(href="#") About
           li: a(href="#") Contact
+      span.GetStarted Get Started
 
     aside
       ul
@@ -154,14 +167,3 @@ html
 
     div.NoDisplay
       script(src="/js/index.bundle.js")
-
-mixin icon(name)
-  case name
-    when 'twitter'
-      span.Icon: include fonts/social/twitter.svg
-    when 'facebook'
-      span.Icon: include fonts/social/facebook.svg
-    when 'instagram'
-      span.Icon: include fonts/social/instagram.svg
-    when 'googleplus'
-      span.Icon: include fonts/social/googleplus.svg
